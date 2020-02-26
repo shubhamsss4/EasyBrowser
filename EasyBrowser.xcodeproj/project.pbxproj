@@ -13,6 +13,7 @@
 		D85094DF240423E5001624F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85094DD240423E5001624F7 /* Main.storyboard */; };
 		D85094E1240423E6001624F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85094E0240423E6001624F7 /* Assets.xcassets */; };
 		D85094E4240423E6001624F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85094E2240423E6001624F7 /* LaunchScreen.storyboard */; };
+		D85094EE2406EA74001624F7 /* WebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85094ED2406EA74001624F7 /* WebSiteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D85094E0240423E6001624F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D85094E3240423E6001624F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D85094E5240423E6001624F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85094ED2406EA74001624F7 /* WebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D85094D7240423E5001624F7 /* AppDelegate.swift */,
 				D85094D9240423E5001624F7 /* SceneDelegate.swift */,
 				D85094DB240423E5001624F7 /* ViewController.swift */,
+				D85094ED2406EA74001624F7 /* WebSiteViewController.swift */,
 				D85094DD240423E5001624F7 /* Main.storyboard */,
 				D85094E0240423E6001624F7 /* Assets.xcassets */,
 				D85094E2240423E6001624F7 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85094EE2406EA74001624F7 /* WebSiteViewController.swift in Sources */,
 				D85094DC240423E5001624F7 /* ViewController.swift in Sources */,
 				D85094D8240423E5001624F7 /* AppDelegate.swift in Sources */,
 				D85094DA240423E5001624F7 /* SceneDelegate.swift in Sources */,

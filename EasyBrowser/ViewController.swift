@@ -26,12 +26,15 @@ class ViewController: UIViewController, WKNavigationDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let back = UIBarButtonItem(title: "Back", style: .plain, target: webView, action: #selector(webView.goBack))
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        let forward = UIBarButtonItem(title: "Forward", style: .plain, target: webView, action: #selector(webView.goForward))
         
         progressView = UIProgressView(progressViewStyle: .default)
         progressView.sizeToFit()
         let progressButton = UIBarButtonItem(customView: progressView)
-        toolbarItems = [progressButton,spacer,refresh]
+        toolbarItems = [progressButton,spacer,back,refresh,forward]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
@@ -69,8 +72,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        let url = navigationAction.request.url
-        if let host = url?.host {
+        guard let url = navigationAction.request.url else { return }
+        if let host = url.host {
             for website in websites {
                 if host.contains(website) {
                     decisionHandler(.allow)
@@ -78,6 +81,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
                 }
             }
         }
+        let ac = UIAlertController(title: "Sites Blocked", message: "The site \(url) is Blocked", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(ac,animated: true)
         decisionHandler(.cancel)
     }
     
